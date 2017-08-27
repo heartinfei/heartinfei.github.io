@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&amp;quot;message&amp;quot;); Activity b 123456789101112131415private fin">
+<meta name="description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&quot;message&quot;); Activity b 123456789101112131415private final String">
 <meta name="keywords" content="Android,Intent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="优雅的使用Intent">
 <meta property="og:url" content="http://heartinfei.github.io/2017/08/27/优雅的使用Intent/index.html">
 <meta property="og:site_name" content="祖传大苹果的个人博客">
-<meta property="og:description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&amp;quot;message&amp;quot;); Activity b 123456789101112131415private fin">
+<meta property="og:description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&quot;message&quot;); Activity b 123456789101112131415private final String">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-27T06:46:56.000Z">
+<meta property="og:updated_time" content="2017-08-27T09:26:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优雅的使用Intent">
-<meta name="twitter:description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&amp;quot;message&amp;quot;); Activity b 123456789101112131415private fin">
+<meta name="twitter:description" content="在看了Android架构系列-如何优美的写Intent后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下  Intent写法优化Activity a要调用起Activity b页面可以这样写：Activity a1b.launch(a.this,&quot;message&quot;); Activity b 123456789101112131415private final String">
 
 
 
@@ -427,9 +427,9 @@
         <blockquote>
 <p>在看了<a href="http://www.jianshu.com/p/fcdded2f8444" target="_blank" rel="external">Android架构系列-如何优美的写Intent</a>后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下</p>
 </blockquote>
-<h5 id="Intent写法优化"><a href="#Intent写法优化" class="headerlink" title="Intent写法优化"></a>Intent写法优化</h5><p>Activity a要调用起Activity b页面可以这样写：<br>Activity a<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b.launch(a.this,&quot;message&quot;);</div></pre></td></tr></table></figure></p>
+<h5 id="Intent写法优化"><a href="#Intent写法优化" class="headerlink" title="Intent写法优化"></a>Intent写法优化</h5><p>Activity a要调用起Activity b页面可以这样写：<br>Activity a<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b.launch(a.<span class="keyword">this</span>,<span class="string">"message"</span>);</div></pre></td></tr></table></figure></p>
 <p>Activity b</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">private final String EXTR_PARAM = &quot;ext_param&quot;;</div><div class="line"></div><div class="line">public static void launch(Context context, String msg) &#123;</div><div class="line">        Intent intent = new Intent(context, b.class);</div><div class="line">        intent.putExtra(EXTR_PARAM, msg);</div><div class="line">        context.startActivity(intent);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;        </div><div class="line">    super.onCreate(savedInstanceState);</div><div class="line">    ...</div><div class="line">    String is_index = getIntent().getExtras().getString(EXTR_PARAM);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> String EXTR_PARAM = <span class="string">"ext_param"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">launch</span><span class="params">(Context context, String msg)</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(context, b.class);</div><div class="line">        intent.putExtra(EXTR_PARAM, msg);</div><div class="line">        context.startActivity(intent);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;        </div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    ...</div><div class="line">    String is_index = getIntent().getExtras().getString(EXTR_PARAM);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>用上面的方法可以做都模块间更好的解偶，复杂的模块可以配置多个<code>launch(Object ...)</code> 函数（当然注释要写明白^_^），根据参数的不同完成模块的初始化工作，这个团队开发的过程中特别有用，不同模块需要相互调用的时候，启动别人写的模块所需的参数一目了然。</p>
 <blockquote>
 <p>原文地址：<a href="http://www.jianshu.com/p/c263da9333f0" target="_blank" rel="external">简书：优雅的使用Intent</a></p>
@@ -475,6 +475,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/27/Android优雅编程-职责链模式/" rel="prev" title="Android优雅编程-职责链模式">
+                Android优雅编程-职责链模式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -553,7 +557,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -575,7 +579,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,设计模式," />
 
 
 
@@ -97,16 +97,21 @@
 
 
 
-<meta name="description" content="我的描述哈哈">
-<meta property="og:type" content="website">
-<meta property="og:title" content="祖传大苹果的个人博客">
-<meta property="og:url" content="http://heartinfei.github.io/index.html">
+<meta name="description" content="最近在维护公司项目的时候，发现了一个前辈写的一段代码，大家可以先看一下，这里为隐去了具体的实现，代码如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748private void cmdHandler(int cmd, String data) &amp;#123;">
+<meta name="keywords" content="Android,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android优雅编程-职责链模式">
+<meta property="og:url" content="http://heartinfei.github.io/2017/08/27/Android优雅编程-职责链模式/index.html">
 <meta property="og:site_name" content="祖传大苹果的个人博客">
-<meta property="og:description" content="我的描述哈哈">
+<meta property="og:description" content="最近在维护公司项目的时候，发现了一个前辈写的一段代码，大家可以先看一下，这里为隐去了具体的实现，代码如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748private void cmdHandler(int cmd, String data) &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-2873ae9b6122c12a.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/440">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-d42840a43263b234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/880">
+<meta property="og:updated_time" content="2017-08-27T09:34:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="祖传大苹果的个人博客">
-<meta name="twitter:description" content="我的描述哈哈">
+<meta name="twitter:title" content="Android优雅编程-职责链模式">
+<meta name="twitter:description" content="最近在维护公司项目的时候，发现了一个前辈写的一段代码，大家可以先看一下，这里为隐去了具体的实现，代码如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748private void cmdHandler(int cmd, String data) &amp;#123;">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1857802-2873ae9b6122c12a.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/440">
 
 
 
@@ -136,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://heartinfei.github.io/"/>
+  <link rel="canonical" href="http://heartinfei.github.io/2017/08/27/Android优雅编程-职责链模式/"/>
 
 
 
 
 
-  <title>祖传大苹果的个人博客</title>
+  <title>Android优雅编程-职责链模式 | 祖传大苹果的个人博客</title>
   
 
 
@@ -161,8 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -319,9 +323,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -351,9 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/27/Android优雅编程-职责链模式/" itemprop="url">Android优雅编程-职责链模式</a></h1>
+          <h1 class="post-title" itemprop="name headline">Android优雅编程-职责链模式</h1>
         
 
         <div class="post-meta">
@@ -425,9 +427,7 @@
       
 
       
-        
-          
-            <p>最近在维护公司项目的时候，发现了一个前辈写的一段代码，大家可以先看一下，这里为隐去了具体的实现，代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cmdHandler</span><span class="params">(<span class="keyword">int</span> cmd, String data)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (cmd) &#123;</div><div class="line">            <span class="keyword">case</span> CMD1:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD2:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD3:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD4:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD5:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD6:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD7:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD8:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD9:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD10:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD11:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//后面还有很多</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+        <p>最近在维护公司项目的时候，发现了一个前辈写的一段代码，大家可以先看一下，这里为隐去了具体的实现，代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cmdHandler</span><span class="params">(<span class="keyword">int</span> cmd, String data)</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (cmd) &#123;</div><div class="line">            <span class="keyword">case</span> CMD1:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD2:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD3:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD4:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD5:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD6:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD7:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD8:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD9:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD10:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="comment">//to do ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> CMD11:</div><div class="line">                <span class="comment">//具体业务 ....</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//后面还有很多</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>随着公司业务的发展具体的<code>CMD*</code>的数量还在不断的增长中，由于该类是公共服务中的一部分，每增加一个相关的业务就需要增加一个<code>CMD</code>，团队有N个程序员小哥，不同的小哥添加了不同的<code>CMD</code>而且“上”完就走，生活经验告诉我们大家一起用的东西都肯定不会有什么好结果，这个模块一样没逃脱这个悲惨的命运，现在这个类已经有几千行，充斥着迷一样的业务实现交织在一起。<br><img src="http://upload-images.jianshu.io/upload_images/1857802-2873ae9b6122c12a.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/440" alt="timg.jpeg"></p>
 <p>我觉得这个图片非常直观的展现这个类也表达了我的心情，再不重构这颗雷迟早会炸，只是时间问题，作为一个有情怀的程序员😊，我怎么会让这种事情发生，下面直奔主题！</p>
 <p>这里用到了设计模式中的 “<em>职责链模式(Chain of Responsibility)</em> ”</p>
@@ -452,8 +452,6 @@
 <p>运行结果：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1857802-d42840a43263b234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/880" alt="屏幕快照 2017-03-14 下午3.31.00.png"><br>从此整个世界都清净了！<br><a href="https://github.com/heartinfei/ChainDemo.git" target="_blank" rel="external">demo已上传github</a></p>
 
-          
-        
       
     </div>
     
@@ -468,315 +466,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://heartinfei.github.io/2017/08/27/优雅的使用Intent/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祖传大苹果">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祖传大苹果的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/27/优雅的使用Intent/" itemprop="url">优雅的使用Intent</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T14:39:25+08:00">
-                2017-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>在看了<a href="http://www.jianshu.com/p/fcdded2f8444" target="_blank" rel="external">Android架构系列-如何优美的写Intent</a>后感觉收获良多，自己也把在实际生产过程中使用Intent的一点心得分享下</p>
-</blockquote>
-<h5 id="Intent写法优化"><a href="#Intent写法优化" class="headerlink" title="Intent写法优化"></a>Intent写法优化</h5><p>Activity a要调用起Activity b页面可以这样写：<br>Activity a<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">b.launch(a.<span class="keyword">this</span>,<span class="string">"message"</span>);</div></pre></td></tr></table></figure></p>
-<p>Activity b</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> String EXTR_PARAM = <span class="string">"ext_param"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">launch</span><span class="params">(Context context, String msg)</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(context, b.class);</div><div class="line">        intent.putExtra(EXTR_PARAM, msg);</div><div class="line">        context.startActivity(intent);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;        </div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    ...</div><div class="line">    String is_index = getIntent().getExtras().getString(EXTR_PARAM);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>用上面的方法可以做都模块间更好的解偶，复杂的模块可以配置多个<code>launch(Object ...)</code> 函数（当然注释要写明白^_^），根据参数的不同完成模块的初始化工作，这个团队开发的过程中特别有用，不同模块需要相互调用的时候，启动别人写的模块所需的参数一目了然。</p>
-<blockquote>
-<p>原文地址：<a href="http://www.jianshu.com/p/c263da9333f0" target="_blank" rel="external">简书：优雅的使用Intent</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://heartinfei.github.io/2017/08/07/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祖传大苹果">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祖传大苹果的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/07/hello-world/" itemprop="url">Hexo帮助文档</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T14:15:21+08:00">
-                2017-08-07
-              </time>
+              <a href="/2017/08/27/优雅的使用Intent/" rel="next" title="优雅的使用Intent">
+                <i class="fa fa-chevron-left"></i> 优雅的使用Intent
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>主题设置：<a href="http://theme-next.iissnan.com/theme-settings.html#syntax-highlight-scheme" target="_blank" rel="external">Next</a><br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -786,10 +507,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -797,6 +519,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1065,6 +791,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
