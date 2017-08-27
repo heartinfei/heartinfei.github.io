@@ -97,22 +97,22 @@
 
 
 
-<meta name="description" content="代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO！虽然说混淆不">
+<meta name="description" content="原文链接  代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO">
 <meta name="keywords" content="Android,混淆">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android混淆快速配置之@Keep">
 <meta property="og:url" content="http://heartinfei.github.io/2017/08/27/Android混淆快速配置之-Keep/index.html">
 <meta property="og:site_name" content="祖传大苹果的个人博客">
-<meta property="og:description" content="代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO！虽然说混淆不">
+<meta property="og:description" content="原文链接  代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-a3ef2f612d566076.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-9c4951c19d40a340.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-9bf189ea8ee56b0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1857802-9e2b22a3345daf71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-27T13:37:56.000Z">
+<meta property="og:updated_time" content="2017-08-27T13:40:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android混淆快速配置之@Keep">
-<meta name="twitter:description" content="代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO！虽然说混淆不">
+<meta name="twitter:description" content="原文链接  代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1857802-a3ef2f612d566076.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -385,7 +385,10 @@
       
 
       
-        <p>代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO！虽然说混淆不能保证你的代码的100%安全但是这是通往代码安全之路的第一步。下面来讲解如何为我们的项目快速的配置混淆。</p>
+        <blockquote>
+<p><a href="http://www.jianshu.com/p/9dacabd351e3" target="_blank" rel="external">原文链接</a></p>
+</blockquote>
+<p>代码混淆是每个java程序猿的必修课，但是为项目写混淆配置文件是一件痛苦的事情，关键字比较多不太好记忆，而且一旦配置好很长时间内都不需要修改，也许当时记得，过后慢慢就忘记了。那不配置混淆行不行呢？答案肯定是不行的，因为你要面对虎视眈眈的同行还有行业内的各种黑暗的利益链条，不混淆就发布几乎等于将自己的工作成果拱手让人。那你可能会问那我混淆了就可以确保万无一失了？我只能残酷的告诉你：NO！虽然说混淆不能保证你的代码的100%安全但是这是通往代码安全之路的第一步。下面来讲解如何为我们的项目快速的配置混淆。</p>
 <ol>
 <li>Keep Options  保持不变的选项，简单点说就是保持哪些类或者哪些元素不被混淆，“keep家族”就是帮我们做这件事情的。<br><code>-keep [,modifier,...] class_specification</code><br>保持class_specification规则；若有[,modifier,…]，则先启用它的规则<br>用法示例：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#不混淆实现android.os.Parcelable的类</div><div class="line">-keep <span class="class"><span class="keyword">class</span> * <span class="keyword">implements</span> <span class="title">android</span>.<span class="title">os</span>.<span class="title">Parcelable</span></span></div></pre></td></tr></table></figure>
 </li>
